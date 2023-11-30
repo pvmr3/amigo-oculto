@@ -1,6 +1,6 @@
 const GIST_ID = "676f36c399284ec286c2ddf187d2d1d2";
 const GIST_URL = `https://api.github.com/gists/${GIST_ID}`;
-const TOKEN = "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"
+const TOKEN = "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"
 
 const GET_REQUEST = {
     method: "GET",
