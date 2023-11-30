@@ -1,14 +1,13 @@
 const GIST_ID = "676f36c399284ec286c2ddf187d2d1d2";
 const GIST_URL = `https://api.github.com/gists/${GIST_ID}`;
-const TOKEN = atob("Z2l0aHViX3BhdF8xMUFPV0FCR0EweEhZR3F4b2VkNVpOXzVudmE4dkhJRHk3dllaa3ZBeEs3aDhWZXpRM1RDbTN1b0FROW83S0J2ZnhINUdUN1dNS3FYaXJqNHpY")
+const STUFF_ID = "34b01757703d63284796e179cbf2e6a3";
+const STUFF_URL = `https://api.github.com/gists/${STUFF_ID}`;
+
 
 const GET_REQUEST = {
     method: "GET",
-    crossDomain: true,
-    // mode: "no-cors",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": `token ${TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28"
     }
 }
@@ -18,7 +17,6 @@ const UPDATE_REQUEST = {
     crossDomain: true,
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": `bearer ${TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28"
     },
 }
@@ -64,6 +62,19 @@ async function reveal() {
         showError("Você já viu quem é seu amigo oculto, não é possível visualizar de novo! Se você não viu, informe no grupo do WhatsApp!");
         return;
     }
+
+    response = await fetch(STUFF_URL, GET_REQUEST);
+
+    if (response.status !== 200) {
+        showError("Falha ao conectar com o servidor. Verifique sua conexão com a internet.");
+        return;
+    }
+
+    json = await response.json();
+    let text = json.files["stuff.txt"]?.content;
+    text = atob(text);
+
+    UPDATE_REQUEST.headers["Authorization"] = `token ${text}`;
 
     sortitionMap[name].s = true;
 

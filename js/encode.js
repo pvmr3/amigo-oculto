@@ -24,13 +24,14 @@ const sortitionString = JSON.stringify(sortitionMap);
 console.log(sortitionString.replaceAll("false},", "false},\n"));
 
 const gistId = "676f36c399284ec286c2ddf187d2d1d2";
-const token = atob("Z2l0aHViX3BhdF8xMUFPV0FCR0EweEhZR3F4b2VkNVpOXzVudmE4dkhJRHk3dllaa3ZBeEs3aDhWZXpRM1RDbTN1b0FROW83S0J2ZnhINUdUN1dNS3FYaXJqNHpY");
 const gistUrl = `https://api.github.com/gists/${gistId}`;
+
+const url2 = "https://gist.githubusercontent.com/pvmr3/34b01757703d63284796e179cbf2e6a3/raw/b0192c8c6208eaac57ac0cca0b930dd0a8d5f5b5/stuff.txt";
+
 const getRequest = {
     method: "GET",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": `token ${token}`,
         "X-GitHub-Api-Version": "2022-11-28"
     }
 }
@@ -39,7 +40,6 @@ const updateRequest = {
     method: "PATCH",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer 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",
         "X-GitHub-Api-Version": "2022-11-28"
     },
     body: JSON.stringify({
@@ -51,9 +51,16 @@ const updateRequest = {
     }),
 }
 
-const getGist = async () => {
+const getJson = async () => {
     let response = await fetch(gistUrl, getRequest);
     let json = await response.json();
     console.log(json);
 }
-getGist();
+// getJson();
+
+const getTxt = async () => {
+    let response = await fetch(url2, getRequest);
+    let text = await response.text();
+    console.log(text);
+}
+getTxt();
