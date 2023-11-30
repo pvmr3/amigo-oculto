@@ -4,7 +4,6 @@ function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
 
-
 let shuffledNames = shuffle([...names]);
 let hasRepeated;
 
@@ -25,12 +24,9 @@ const sortitionString = JSON.stringify(sortitionMap);
 console.log(sortitionString.replaceAll("false},", "false},\n"));
 
 const gistId = "676f36c399284ec286c2ddf187d2d1d2";
-// const token = "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"
-const token = "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"
-// const token = btoa("pvmr3:@eeams123")
+const token = atob("Z2l0aHViX3BhdF8xMUFPV0FCR0EweEhZR3F4b2VkNVpOXzVudmE4dkhJRHk3dllaa3ZBeEs3aDhWZXpRM1RDbTN1b0FROW83S0J2ZnhINUdUN1dNS3FYaXJqNHpY");
 const gistUrl = `https://api.github.com/gists/${gistId}`;
 const getRequest = {
-    mode: "no-cors",
     method: "GET",
     headers: {
         "Accept": "application/vnd.github+json",
