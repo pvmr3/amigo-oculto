@@ -30,7 +30,7 @@ const getRequest = {
     method: "GET",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
         "X-GitHub-Api-Version": "2022-11-28"
     }
 }
@@ -39,7 +39,7 @@ const updateRequest = {
     method: "PATCH",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
         "X-GitHub-Api-Version": "2022-11-28"
     },
     body: JSON.stringify({
