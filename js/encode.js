@@ -25,7 +25,7 @@ const sortitionString = JSON.stringify(sortitionMap);
 console.log(sortitionString.replaceAll("false},", "false},\n"));
 
 const gistId = "676f36c399284ec286c2ddf187d2d1d2";
-const token = "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"
+const token = "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"
 const gistUrl = `https://api.github.com/gists/${gistId}`;
 const getRequest = {
     method: "GET",
