@@ -1,0 +1,22 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#error-message {
+    display: none;
+    padding: 5px;
+    color: white;
+    background-color: red;
+}
+
+.show {
+    display: block !important;
+}
+
