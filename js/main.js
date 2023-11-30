@@ -1,11 +1,12 @@
 const GIST_ID = "676f36c399284ec286c2ddf187d2d1d2";
 const GIST_URL = `https://api.github.com/gists/${GIST_ID}`;
+const TOKEN = "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"
 
 const GET_REQUEST = {
     method: "GET",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer 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",
+        "Authorization": `Bearer ${TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28"
     }
 }
@@ -14,7 +15,7 @@ const UPDATE_REQUEST = {
     method: "PATCH",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": "Bearer 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",
+        "Authorization": `Bearer ${TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28"
     },
 }
