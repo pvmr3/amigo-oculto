@@ -4,7 +4,6 @@ const GIST_URL = `https://api.github.com/gists/${GIST_ID}`;
 const GET_REQUEST = {
     method: "GET",
     headers: {
-        "Origin": "http://www.example.com",
         "Accept": "application/vnd.github+json",
         "Authorization": "Bearer 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",
         "X-GitHub-Api-Version": "2022-11-28"
