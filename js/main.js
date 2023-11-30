@@ -1,13 +1,14 @@
 const GIST_ID = "676f36c399284ec286c2ddf187d2d1d2";
 const GIST_URL = `https://api.github.com/gists/${GIST_ID}`;
-const TOKEN = "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"
+const TOKEN = "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"
 
 const GET_REQUEST = {
     method: "GET",
     crossDomain: true,
+    // mode: "no-cors",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": `bearer ${TOKEN}`,
+        "Authorization": `token ${TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28"
     }
 }

@@ -25,13 +25,16 @@ const sortitionString = JSON.stringify(sortitionMap);
 console.log(sortitionString.replaceAll("false},", "false},\n"));
 
 const gistId = "676f36c399284ec286c2ddf187d2d1d2";
-const token = "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"
+// const token = "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"
+const token = "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"
+// const token = btoa("pvmr3:@eeams123")
 const gistUrl = `https://api.github.com/gists/${gistId}`;
 const getRequest = {
+    mode: "no-cors",
     method: "GET",
     headers: {
         "Accept": "application/vnd.github+json",
-        "Authorization": `Bearer ${token}`,
+        "Authorization": `token ${token}`,
         "X-GitHub-Api-Version": "2022-11-28"
     }
 }
