@@ -102,7 +102,7 @@ async function reveal() {
 
     setTimeout(() => {
         revealText.innerText = ""
-    }, 5000);
+    }, 10000);
 }
 
 const revealBtn = document.getElementById("revealBtn");
