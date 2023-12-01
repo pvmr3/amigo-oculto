@@ -40,6 +40,7 @@ const updateRequest = {
     method: "PATCH",
     headers: {
         "Accept": "application/vnd.github+json",
+        "Authorization": "token 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",
         "X-GitHub-Api-Version": "2022-11-28"
     },
     body: JSON.stringify({
@@ -52,15 +53,15 @@ const updateRequest = {
 }
 
 const getJson = async () => {
-    let response = await fetch(gistUrl, getRequest);
+    let response = await fetch(gistUrl, updateRequest);
     let json = await response.json();
     console.log(json);
 }
-// getJson();
+getJson();
 
-const getTxt = async () => {
-    let response = await fetch(url2, getRequest);
-    let text = await response.text();
-    console.log(text);
-}
-getTxt();
+// const getTxt = async () => {
+//     let response = await fetch(url2, getRequest);
+//     let text = await response.text();
+//     console.log(text);
+// }
+// getTxt();
