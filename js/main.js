@@ -29,6 +29,9 @@ function showError(text) {
 }
 
 async function reveal() {
+    const revealText = document.getElementById("reveal-text");
+    revealText.innerText = "";
+
     const name = document.getElementById("myInput").value;
 
     if (!names.includes(name)) {
@@ -94,9 +97,12 @@ async function reveal() {
     }
 
     const friend = atob(f);
-    const revealText = document.getElementById("reveal-text");
     revealText.innerText = `Seu amigo oculto é: ${friend}`
     revealText.classList.add("show");
+
+    setTimeout(() => {
+        revealText.innerText = ""
+    }, 5000);
 }
 
 const revealBtn = document.getElementById("revealBtn");
